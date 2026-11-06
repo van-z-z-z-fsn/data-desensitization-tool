@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "builtinEnabled": {
+    "手机号": true,
+    "身份证": true,
+    "邮箱": true,
+    "银行卡": true,
+    "金额": true
+  },
+  "customRegex": [
+    {
+      "type": "运单号",
+      "regex": "(?<!\\d)\\d{12,15}(?!\\d)",
+      "strategy": "fake",
+      "score": 0.55,
+      "context": []
+    },
+    {
+      "type": "工号",
+      "regex": "(?<!\\d)\\d{8}(?!\\d)",
+      "strategy": "mask",
+      "score": 0.2,
+      "context": [
+        "工号",
+        "员工编号",
+        "快递员",
+        "收派员"
+      ]
+    },
+    {
+      "type": "月结账号",
+      "regex": "(?<!\\w)88\\d{8}(?!\\w)",
+      "strategy": "fake",
+      "score": 0.55,
+      "context": [
+        "月结",
+        "月结账号",
+        "月结卡号",
+        "客户编码"
+      ]
+    },
+    {
+      "type": "车牌号",
+      "regex": "[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼][A-HJ-NP-Z][A-HJ-NP-Z0-9挂学警港澳]{4,5}",
+      "strategy": "fake",
+      "score": 0.7,
+      "context": [
+        "车牌",
+        "车牌号"
+      ]
+    }
+  ],
+  "denyList": [
+    "深圳宝安中转场",
+    "广州白云中转场",
+    "华南航空枢纽",
+    "华东转运中心",
+    "华强北营业点",
+    "天河区配送站"
+  ],
+  "allowValues": [
+    "顺丰",
+    "顺丰速运",
+    "SF",
+    "000000000000",
+    "888888888888"
+  ],
+  "skipFields": [
+    "重量",
+    "件数",
+    "序号",
+    "重量(kg)"
+  ],
+  "opaqueMode": true,
+  "mapNameTemplate": "{原名}_映射表.json"
+}
