@@ -1,0 +1,59 @@
+# ========== 绝对禁止入库（含真实敏感值）==========
+*_映射表.json
+*映射表.json
+*mapping*.json
+mapping*.json
+*_脱敏报告.md
+*对照视图.csv
+*AI结论_已还原.txt
+
+# 导出产物 / 脱敏结果
+*_脱敏.xlsx
+*_脱敏.csv
+*_脱敏.txt
+*_还原.xlsx
+
+# 真实业务数据目录与文件
+真实*/
+real*/
+private/
+机密*/
+生产*/
+prod*/
+*.local.*
+*.secret.*
+.env
+.env.*
+
+# 口令/密钥类（若以后扩展）
+*口令*
+*password*
+*secrets*
+
+# ========== 开发临时文件 ==========
+_patch_*.js
+_make_*.js
+_test_*.js
+_run_checklist.js
+_app_check.js
+_syntax*
+_xlsx.b64
+_chunks.json
+_inject_*.js
+_c[0-9].js
+
+# ========== 系统 / IDE ==========
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak
+*.swp
+*~
+.idea/
+.vscode/
+*.code-workspace
+
+# Node（若以后加构建）
+node_modules/
+npm-debug.log*
